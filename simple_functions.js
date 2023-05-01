@@ -14,7 +14,5 @@ function favoritePlace() {
 }
 
 favoriteThings()
-
 whyImHere()
-
 favoritePlace()
