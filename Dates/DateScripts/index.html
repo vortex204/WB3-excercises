@@ -1,0 +1,25 @@
+<body>
+    <h1>Countdown to Trip</h1>
+    <div>
+    <label for="travel-date">Travel Date:</label>
+    </div>
+    <input type="date"  id="travel-date" required>
+    <button onclick="calculateDaysUntilTrip()">Submit</button>
+    <p id="result"></p>
+    <script>
+  function calculateDaysUntilTrip() {
+  const travelDateInput = document.getElementById('travel-date');
+  const travelDate = new Date(travelDateInput.value);
+  const today = new Date();
+  const timeDiff = travelDate.getTime() - today.getTime();
+  const dayDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+  const result = document.getElementById('result');
+  result.textContent = `Your trip is in ${dayDiff} days`;
+}
+
+const submitBtn = document.getElementById('submit-btn');
+submitBtn.addEventListener('click', calculateDaysUntilTrip);
+
+    </script>
+</body>
+</html>
